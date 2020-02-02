@@ -5,8 +5,6 @@
         <meta name="viewport" content="width-device-width">
 
         <title>my photo</title>
-
-        <link rel="stylesheet" href="htpps://fonts.goog">
         <link rel="stylesheet" href="css/style.css">
     </head>
 
@@ -20,51 +18,14 @@
             <div id="img_unit">
                     <!-- この部分に、document.creatElemantで作った要素が入ります。 -->
             </div>
-
+        </div>
             <script>
-                <?xml version=“1.0” ?> // xml形式のデータが扱える
-                <images>
-                    <image>
-                        <path>img/g001.jpg</path>
-                        <caption>八村塁と、ウィザーズの序盤戦。</caption>
-                        <name>image1</name>
-                    </image>
-                    <image>
-                        <path>img/g002.jpg</path>
-                        <caption>八村塁が野球を続けなかった意外な理由</caption>
-                        <name>image2</name>
-                    </image>
-                    <image>
-                        <path>img/g003.jpg</path>
-                        <caption>日清食品　バスケ・八村選手とスポンサー契約</caption>
-                        <name>image3</name>
-                    </image>
-                </images>
-                // setAttributeによって、imagesの中にある画像を取得 
-
-                var img;
-                var caption;
-                var div;
-
-                for(var i=0; i<images.length; i++){
-                    img = document.createElement('img')
-                    img.setAttrubute('src', images[i].path);
-
-                    caption = document.createElement('div');
-                    caption.className = 'inner';
-                    caption.innerHTML = '<P>' + images[i].caption + '<span>' + images[i].name + '</span></p>';
-
-                    div = document.createElement('div');
-                    div.className = 'photo',
-                    div.appendChild(img);
-                    div.appendChild(caption);
-
-                    // alert(images[0].caption)
-                    document.getElementById('img_unit').appendChild(div);
-                }
+                var ajax = new.XMLHttpRequest();
+                ajax.open('GET', 'https://h2o-space.com/htmlbook/images.php');
+                ajax.responseType = 'json';
+                ajax.send(null);
             </script>
 
-        </div>
     </body>
 </html>
 
