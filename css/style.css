@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta chearsetz="UTF-8">
+        <meta name="viewport" content="width-device-width">
+
+        <title>my photo</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>My Pohotos</h1>
+        </header>
+
+        <div class="container">
+
+            <div id="img_unit">
+                    <!-- この部分に、document.creatElemantで作った要素が入ります。 -->
+            </div>
+        </div>
+            <script>
+                var ajax = new XMLHttpRequest();
+                ajax.open('GET', 'https://h2o-space.com/htmlbook/images.php');
+                ajax.responseType = 'json';
+                ajax.send(null);
+            </script>
+
+    </body>
+</html>
+
+
