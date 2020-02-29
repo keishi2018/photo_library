@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta chearsetz="UTF-8">
-        <meta name="viewport" content="width-device-width">
+body{
+    font-family: arial;
+    text-align: center;
+}
 
-        <title>my photo</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+header {
+    margin-bottom: 100px;
+}
 
-    <body>
-        <header>
-            <h1>My Pohotos</h1>
-        </header>
+h1 {
+    background-color: #000;
+    color: #ffffff;
+    margin: 0;;
+    padding: 10px;
+    font-size: 18px;
+}
 
-        <div class="container">
-
-            <div id="img_unit">
-                    <!-- この部分に、document.creatElemantで作った要素が入ります。 -->
-            </div>
-        </div>
-            <script>
-                var ajax = new XMLHttpRequest();
-                ajax.open('GET', 'https://h2o-space.com/htmlbook/images.php');
-                ajax.responseType = 'json';
-                ajax.send(null);
-            </script>
-
-    </body>
-</html>
-
-
+.date {
+font-size: 300%;
+font-family: 'Times New Roman', Times, serif;
+}

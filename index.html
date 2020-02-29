@@ -6,7 +6,7 @@
 
         <title>my photo</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
-        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
     </head>
 
     <body>
@@ -19,11 +19,18 @@
                     <!-- この部分に、document.creatElemantで作った要素が入ります。 -->
             </div>
         </div>
-        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        
         <script>
-            $('#img_unit').html('ここに、画像リストが表示されます');
-            alert($('#img_unit').html());
-            $('#img_unit').css('margin-top', '100px');
+            $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
+                for(var i=0; i<data.length; i++){
+                    $('<div class="photo"></div>')
+                    .append('<img src="' + data[i].path + '">')
+                    .append('<div class="inner"><p>' + data[i].caption + '<span>' + data[i].name + '<span></p></div>')
+                    .appendTo('#img_unit');
+                }
+            });
         </script>
     </body>
 </html>
