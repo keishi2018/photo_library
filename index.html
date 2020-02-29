@@ -4,15 +4,16 @@
         <meta chearsetz="UTF-8">
         <meta name="viewport" content="width-device-width">
 
-        <title>my photo</title>
+        <title>My photo</title>
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
-        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
         <div class="container">
             <header>
-                <h1>My Pohotos</h1>
+                <h1>My Photos</h1>
             </header>
 
             <div id="img_unit">
@@ -22,8 +23,8 @@
             <div id="vue_unit">
                 {{ message }}
             </div>
-
         </div>
+
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
@@ -34,14 +35,14 @@
                     message: 'Vue.jsで書き換えました'
                 }
             });
-        </script>å
+        </script>
 
         <script>
             $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
                 for(var i=0; i<data.length; i++){
                     $('<div class="photo"></div>')
                     .append('<img src="' + data[i].path + '">')
-                    .append('<div class="inner"><p>' + data[i].caption + '<span>' + data[i].name + '<span></p></div>')
+                    .append('<div class="inner"><p>' + data[i].memo + '<span>' + data[i].date + '<span></p></div>')
                     .appendTo('#img_unit');
                 }
             });
