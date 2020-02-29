@@ -18,10 +18,24 @@
             <div id="img_unit">
                     <!-- この部分に、document.creatElemantで作った要素が入ります。 -->
             </div>
+
+            <div id="vue_unit">
+                {{ message }}
+            </div>
+
         </div>
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        
+
+        <script>
+            var app = new Vue({
+                el: '#vue_unit',
+                data:{
+                    message: 'Vue.jsで書き換えました'
+                }
+            });
+        </script>å
+
         <script>
             $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
                 for(var i=0; i<data.length; i++){
