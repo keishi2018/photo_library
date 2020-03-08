@@ -17,7 +17,10 @@
             </header>
 
             <div id="img_unit">
-                    <!-- この部分に、document.creatElemantで作った要素が入ります。 -->
+                <div class="photo" v-for="Photo in Photos">
+                    <img :src="Photo.path">
+                    <div class="inner"><p>{{Photo.caption}}<span>{{Photo.name}}</span></p></div>
+                </div>
             </div>
 
             <div id="vue_unit">
@@ -32,9 +35,16 @@
             var app = new Vue({
                 el: '#vue_unit',
                 data:{
-                    message: 'Vue.jsで書き換えました'
+                    Photos: []
+                },
+                created: function(){
+                    var self = this;
                 }
-            });
+                $.getJSON('https://h2o-space.com/htmlbook/images.php', function(data){
+                    self.Photos = data;
+                });
+            }
+        });
         </script>
 
         <script>
